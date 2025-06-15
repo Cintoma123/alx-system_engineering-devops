@@ -1,4 +1,4 @@
 #!/bin/bash
 current_user=$(Cintoma123)
-echo 'Hello $current_user
+echo 'Hello_you $current_user
 
