@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# installs nginx web server on a remote server
+sudo apt-get update
+# installing ngix
+sudo apt-get install -y nginx
+# allowing ngix http
+uwf allow 'Nginx HTTP'
+echo"echo "Ceci n'est pas une page." | " |sudo tee /var/www/html/404.html
+string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+
+
+
+
+# starting nginx
+service nginx start
