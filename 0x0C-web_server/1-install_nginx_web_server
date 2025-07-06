@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# installs nginx web server on a remote server
+sudo apt-get update
+sudo apt-get install -y nginx
+uwf allow 'Nginx HTTP'
+echo"Hello World!"> /var/www/html/index.html
+
+
+service nginx start
